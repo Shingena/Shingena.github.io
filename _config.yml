@@ -1,0 +1,52 @@
+title: "Shingena"
+description: "Open-Source-App zum Erstellen von Pässen & Passkeys – mit Fokus auf Apple (macOS, iOS, iPadOS, visionOS) und Konsole."
+url: "https://shingena.nijida.de"
+baseurl: ""  # leer lassen bei apex/subdomain
+lang: de
+permalink: pretty
+
+# Theme
+remote_theme: just-the-docs/just-the-docs
+plugins:
+  - jekyll-remote-theme
+
+# Navigation / Struktur
+nav_enabled: true
+
+# Farbgebung & Marke (wird in assets/css/custom.scss konkretisiert)
+just_the_docs:
+  logo: "/assets/img/shingena-logo.svg"
+  footer_content: "© CC0 – Shingena. Open Source."
+  # Suche aktivieren
+  search_enabled: true
+
+# Externe Links (GitHub etc.)
+# HINWEIS: dev_repo_url ist aktuell als Platzhalter gesetzt.
+# Passe das ggf. an, sobald das Ziel-Repo feststeht.
+dev_repo_url: "https://github.com/shingen.apple"
+pages_repo_url: "https://github.com/Shingena/Shingena.github.io"
+
+# Aux-Links oben rechts
+aux_links:
+  "GitHub (Dev)":
+    - "https://github.com/shingen.apple"
+  "Issues":
+    - "https://github.com/shingen.apple/issues"
+  "Discussions (Forum)":
+    - "https://github.com/shingen.apple/discussions"
+  "Wiki":
+    - "https://github.com/shingen.apple/wiki"
+
+# Collections (optional für spätere Doku-Erweiterung)
+collections:
+  docs:
+    output: true
+    permalink: /:collection/:name/
+
+# Build-Einstellungen
+markdown: kramdown
+kramdown:
+  input: GFM
+
+# Minima/Theme-Defaults vermeiden
+theme: null

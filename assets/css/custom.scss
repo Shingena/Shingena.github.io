@@ -1,0 +1,54 @@
+/*
+  Shingena Design:
+  - Primär: Indigo (#4F46E5)
+  - Akzent: Malachit (#10B981)
+  - Text: Slate/Dunkel
+  - Hintergrund: Hell
+  Schriften: System-Apple + Noto Sans JP Fallback
+*/
+
+/* just-the-docs Variablen-Overrides */
+$body-font-family: -apple-system, BlinkMacSystemFont, "SF Pro Text", "Hiragino Kaku Gothic ProN", "Noto Sans JP", "Segoe UI", Roboto, "Helvetica Neue", Arial, "Apple Color Emoji", "Segoe UI Emoji", "Segoe UI Symbol", sans-serif !default;
+$mono-font-family: ui-monospace, SFMono-Regular, Menlo, Monaco, Consolas, "Liberation Mono", "Courier New", monospace !default;
+
+$body-background-color: #ffffff !default;
+$body-text-color: #111827 !default;  /* slate-900 */
+$link-color: #4F46E5 !default;        /* indigo-600 */
+$btn-primary-color: #4F46E5 !default;
+$base-button-color: #4F46E5 !default;
+$nav-child-link-color: #4B5563 !default; /* gray-600 */
+$sidebar-color: #F9FAFB !default;       /* gray-50 */
+$code-background-color: #F3F4F6 !default; /* gray-100 */
+$feedback-color: #10B981 !default;      /* emerald-500 */
+
+/* Zusätzliche kleine Tweaks */
+.site-logo {
+  height: 28px;
+}
+
+.btn-store, .btn-primary {
+  display: inline-block;
+  padding: 0.6rem 1rem;
+  border-radius: 0.5rem;
+  text-decoration: none;
+  font-weight: 600;
+  background: #4F46E5;
+  color: #fff !important;
+}
+.btn-secondary {
+  display: inline-block;
+  padding: 0.6rem 1rem;
+  border-radius: 0.5rem;
+  text-decoration: none;
+  font-weight: 600;
+  background: #10B981;
+  color: #fff !important;
+}
+.hero {
+  display: grid;
+  gap: 1rem;
+  margin: 1.5rem 0 2rem 0;
+}
+.badges > a {
+  margin-right: .5rem;
+}
