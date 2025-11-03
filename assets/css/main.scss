@@ -5,70 +5,166 @@
 @import "minimal-mistakes/skins/default";
 @import "minimal-mistakes";
 
-/* ─────────────────────────────
-   Shingena Classic Theme
-   Gediegene, augenfreundliche Farbwelt
-   ───────────────────────────── */
+/* ─────────────────────────────────────────
+   Shingena – Calm Neutral (Seriös & augenfreundlich)
+   - Verzicht auf grelle Farben
+   - Bessere Lesbarkeit
+   - Schlankere Sidebar ohne dicke Farbbalken
+   ───────────────────────────────────────── */
 
-:root {
-  --mm-color-primary: #3A4C6E;  /* Blaugrau */
-  --mm-color-accent:  #A3B18A;  /* Olivgrün */
-  --mm-body-bg:       #F8F9FA;
-  --mm-body-color:    #1C1C1C;
-  --mm-link-color:    var(--mm-color-primary);
-  --mm-link-hover-color: #5C6B82;
-  --mm-code-bg:       #ECEFF1;
-}
+/* Grundfarben (neutral, ruhig) */
+$shg-bg:        #F6F7F9;  /* sehr helles Grau statt hartem Weiß */
+$shg-text:      #222428;  /* tiefes Anthrazit statt reines Schwarz */
+$shg-primary:   #2F6B9A;  /* gedämpftes Blau für Links/Buttons */
+$shg-primary-h: #1B4F72;  /* Hover/Darker */
+$shg-header:    #2F3A4A;  /* Masthead (Slate) */
+$shg-accent:    #7A8A99;  /* dezente Akzentfarbe für Linien, Muted */
+$shg-sidebar-bg:#F1F3F5;  /* Sidebar-Hintergrund */
+$shg-sidebar-h: #E9ECEF;  /* Sidebar Hover */
+$shg-muted:     #6B7280;  /* Sekundärtext */
+$shg-code-bg:   #ECEFF1;  /* Code-Blocks */
+$shg-border:    #D6DADE;  /* feine Rahmen */
 
-/* Schrift: sanft, systemnah, klare Lesbarkeit */
-body, .page__content {
-  background-color: var(--mm-body-bg);
-  color: var(--mm-body-color);
+/* Body & Typografie */
+html, body {
+  background-color: $shg-bg;
+  color: $shg-text;
   font-family: -apple-system, BlinkMacSystemFont, "SF Pro Text",
                "Hiragino Kaku Gothic ProN", "Noto Sans JP",
                "Segoe UI", Roboto, "Helvetica Neue", Arial, sans-serif;
-  line-height: 1.6;
+  line-height: 1.65;
+  -webkit-font-smoothing: antialiased;
+  -moz-osx-font-smoothing: grayscale;
 }
 
-/* Buttons & Links */
-a, .btn--primary {
-  background-color: var(--mm-color-primary);
-  color: #fff !important;
+/* Überschriften weniger massiv */
+h1, .page__title { font-weight: 600; letter-spacing: .2px; }
+h2 { font-weight: 550; }
+h3, h4, h5, h6 { font-weight: 500; }
+
+/* Links dezent und gut lesbar */
+a {
+  color: $shg-primary;
+  text-decoration: none;
 }
-a:hover, .btn--primary:hover {
-  background-color: var(--mm-link-hover-color);
-  color: #fff !important;
+a:hover, a:focus {
+  color: $shg-primary-h;
+  text-decoration: underline;
 }
 
+/* Buttons */
+.btn, .btn--primary {
+  background: $shg-primary;
+  color: #fff !important;
+  border-radius: 8px;
+  border: 1px solid darken($shg-primary, 4%);
+  box-shadow: 0 1px 2px rgba(0,0,0,.06);
+}
+.btn:hover, .btn--primary:hover {
+  background: $shg-primary-h;
+}
 .btn--success {
-  background-color: var(--mm-color-accent);
-  color: #1C1C1C !important;
+  background: #5C7C8A; /* gedämpftes Cyan-Grau */
+  color: #fff !important;
+  border: 1px solid #516C78;
 }
-.btn--success:hover {
-  filter: brightness(0.9);
-}
+.btn--success:hover { filter: brightness(.95); }
 
-/* Kopfzeile, Navigation */
-.masthead, .page__hero {
-  background-color: var(--mm-color-primary);
+/* Masthead / Header */
+.masthead {
+  background: $shg-header;
   color: #fff;
+  border-bottom: 1px solid darken($shg-header, 4%);
+}
+.masthead__menu-item a {
+  color: #E8ECEF !important;
+}
+.masthead__menu-item a:hover {
+  color: #ffffff !important;
+  text-decoration: none;
 }
 
-/* Footer */
-.page__footer {
-  background-color: #E7E9EB;
-  color: #444;
-  border-top: 1px solid #D0D3D6;
+/* Hero-Overlay etwas leichter */
+.page__hero,
+.page__hero--overlay {
+  background-color: $shg-header;
+}
+.page__hero--overlay .page__lead,
+.page__hero--overlay .btn {
+  text-shadow: none;
+}
+
+/* Sidebar entschärfen: keine dicken Farbbalken links, bessere Lesbarkeit */
+.sidebar,
+.page__sidebar {
+  background: $shg-sidebar-bg;
+  border-right: 1px solid $shg-border;
+}
+.nav__list .nav__items a {
+  color: $shg-text;
+  border-left: none !important;           /* dicke farbige Balken entfernen */
+  padding-left: .9rem;                    /* optische Balance */
+}
+.nav__list .nav__items a:hover {
+  background: $shg-sidebar-h;
+  color: $shg-primary;
+}
+.nav__list .active > a,
+.nav__list .nav__items a[aria-current="page"] {
+  background: $shg-sidebar-h;
+  color: $shg-primary;
+  border-left: 3px solid $shg-primary !important; /* schmaler Marker nur aktiv */
+  padding-left: .75rem;
+}
+
+/* Linktitel/Überschriften in Sidebar */
+.nav__title {
+  color: $shg-muted;
+  font-weight: 600;
+  text-transform: none;
+  letter-spacing: .2px;
+}
+
+/* Content-Bereich */
+.page {
+  background: $shg-bg;
+}
+.page__content {
+  color: $shg-text;
+}
+hr {
+  border-color: $shg-border;
 }
 
 /* Code-Blöcke */
-.highlight pre, code {
-  background-color: var(--mm-code-bg);
+.highlight, .highlight pre, code, pre {
+  background: $shg-code-bg !important;
   border-radius: 6px;
+  border: 1px solid #dde3e6;
 }
 
-/* Galerie-Bilder leicht abgerundet */
-figure img {
+/* Tabellen */
+table {
+  border-color: $shg-border;
+}
+table th {
+  background: #F4F6F8;
+  color: $shg-text;
+  font-weight: 600;
+}
+table tr:nth-child(even) {
+  background: #FAFAFB;
+}
+
+/* Bilder/Thumbnails sanft */
+figure img, img {
   border-radius: 8px;
-  box-shadow: 0 2px 8px rgba(0,0,0,0.1);
+  box-shadow: 0 2px 8px rgba(0,0,0,.06);
+}
+
+/* Footer dezenter */
+.page__footer {
+  background: #EFF1F3;
+  color: #4B5563;
+  border-top: 1px solid $shg-border;
 }
