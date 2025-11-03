@@ -1,0 +1,18 @@
+---
+# Nur Front-Matter, damit Jekyll daraus CSS baut
+---
+
+@import "minimal-mistakes/skins/default"; // Basis-Skin
+@import "minimal-mistakes";               // Theme
+
+/* Brand-Farben und Typo Overrides */
+:root {
+  --mm-color-primary: #4F46E5; /* indigo-600 */
+  --mm-color-accent:  #10B981; /* emerald-500 */
+}
+a, .btn--primary { background-color: var(--mm-color-primary); }
+.btn--success { background-color: var(--mm-color-accent); }
+
+body, .page__content {
+  font-family: -apple-system, BlinkMacSystemFont, "SF Pro Text", "Hiragino Kaku Gothic ProN", "Noto Sans JP", "Segoe UI", Roboto, "Helvetica Neue", Arial, "Apple Color Emoji", "Segoe UI Emoji", "Segoe UI Symbol", sans-serif;
+}

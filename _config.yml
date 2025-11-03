@@ -1,52 +1,75 @@
 title: "Shingena"
-description: "Open-Source-App zum Erstellen von Pässen & Passkeys – mit Fokus auf Apple (macOS, iOS, iPadOS, visionOS) und Konsole."
+name: "Shingena"
+description: "Open-Source-App zum Erstellen von Pässen & Passkeys – Apple-first (Console & macOS zuerst), mit Fokus auf persönliche Karten-Abbildungen."
 url: "https://shingena.nijida.de"
-baseurl: ""  # leer lassen bei apex/subdomain
+baseurl: ""
 lang: de
-permalink: pretty
+permalink: /:categories/:title/
+timezone: Europe/Berlin
 
 # Theme
-remote_theme: just-the-docs/just-the-docs
+remote_theme: "mmistakes/minimal-mistakes@4.26.2"
+
+# Plugins (von GitHub Pages whitelisted)
 plugins:
   - jekyll-remote-theme
+  - jekyll-include-cache
 
-# Navigation / Struktur
-nav_enabled: true
-
-# Farbgebung & Marke (wird in assets/css/custom.scss konkretisiert)
-just_the_docs:
-  logo: "/assets/img/shingena-logo.svg"
-  footer_content: "© CC0 – Shingena. Open Source."
-  # Suche aktivieren
-  search_enabled: true
-
-# Externe Links (GitHub etc.)
-# HINWEIS: dev_repo_url ist aktuell als Platzhalter gesetzt.
-# Passe das ggf. an, sobald das Ziel-Repo feststeht.
-dev_repo_url: "https://github.com/shingen.apple"
-pages_repo_url: "https://github.com/Shingena/Shingena.github.io"
-
-# Aux-Links oben rechts
-aux_links:
-  "GitHub (Dev)":
-    - "https://github.com/shingen.apple"
-  "Issues":
-    - "https://github.com/shingen.apple/issues"
-  "Discussions (Forum)":
-    - "https://github.com/shingen.apple/discussions"
-  "Wiki":
-    - "https://github.com/shingen.apple/wiki"
-
-# Collections (optional für spätere Doku-Erweiterung)
+# Navigation
 collections:
-  docs:
+  posts:
     output: true
-    permalink: /:collection/:name/
 
-# Build-Einstellungen
-markdown: kramdown
-kramdown:
-  input: GFM
+# Site-Wide Defaults
+defaults:
+  - scope:
+      path: ""
+      type: pages
+    values:
+      layout: single
+      author_profile: false
+      classes: wide
+  - scope:
+      path: ""
+      type: posts
+    values:
+      layout: single
+      author_profile: false
 
-# Minima/Theme-Defaults vermeiden
-theme: null
+logo: "/assets/img/shingena-logo.svg"
+repository: "Shingena/Shingena.github.io"
+
+# Social Links / Aux
+github:
+  owner_name: "Shingena"
+  repository_url: "https://github.com/Shingena/Shingena.github.io"
+
+# Externe Dev-Links (Dev-Repo-URL anpassen, sobald final)
+dev_repo_url: "https://github.com/shingen.apple"
+
+# Kopf-/Fußzeile
+masthead_title: "Shingena"
+subtitle: "Pässe & Passkeys erzeugen – Apple-first"
+footer:
+  links:
+    - label: "GitHub (Dev)"
+      url: "https://github.com/shingen.apple"
+    - label: "Issues"
+      url: "https://github.com/shingen.apple/issues"
+    - label: "Discussions"
+      url: "https://github.com/shingen.apple/discussions"
+    - label: "Wiki"
+      url: "https://github.com/shingen.apple/wiki"
+
+# Theme-Optionen
+minimal_mistakes_skin: "default" # wird unten via SCSS eingefärbt
+search: true
+head_scripts:
+  - /assets/js/placeholder.js
+
+# SEO / Author
+author:
+  name: "Shingena Team"
+
+# Navigation (Hauptmenü)
+# Wird über _data/navigation.yml gesteuert
