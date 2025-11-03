@@ -1,18 +1,74 @@
 ---
-# Nur Front-Matter, damit Jekyll daraus CSS baut
+# Front-Matter für Jekyll
 ---
 
-@import "minimal-mistakes/skins/default"; // Basis-Skin
-@import "minimal-mistakes";               // Theme
+@import "minimal-mistakes/skins/default";
+@import "minimal-mistakes";
 
-/* Brand-Farben und Typo Overrides */
+/* ─────────────────────────────
+   Shingena Classic Theme
+   Gediegene, augenfreundliche Farbwelt
+   ───────────────────────────── */
+
 :root {
-  --mm-color-primary: #4F46E5; /* indigo-600 */
-  --mm-color-accent:  #10B981; /* emerald-500 */
+  --mm-color-primary: #3A4C6E;  /* Blaugrau */
+  --mm-color-accent:  #A3B18A;  /* Olivgrün */
+  --mm-body-bg:       #F8F9FA;
+  --mm-body-color:    #1C1C1C;
+  --mm-link-color:    var(--mm-color-primary);
+  --mm-link-hover-color: #5C6B82;
+  --mm-code-bg:       #ECEFF1;
 }
-a, .btn--primary { background-color: var(--mm-color-primary); }
-.btn--success { background-color: var(--mm-color-accent); }
 
+/* Schrift: sanft, systemnah, klare Lesbarkeit */
 body, .page__content {
-  font-family: -apple-system, BlinkMacSystemFont, "SF Pro Text", "Hiragino Kaku Gothic ProN", "Noto Sans JP", "Segoe UI", Roboto, "Helvetica Neue", Arial, "Apple Color Emoji", "Segoe UI Emoji", "Segoe UI Symbol", sans-serif;
+  background-color: var(--mm-body-bg);
+  color: var(--mm-body-color);
+  font-family: -apple-system, BlinkMacSystemFont, "SF Pro Text",
+               "Hiragino Kaku Gothic ProN", "Noto Sans JP",
+               "Segoe UI", Roboto, "Helvetica Neue", Arial, sans-serif;
+  line-height: 1.6;
+}
+
+/* Buttons & Links */
+a, .btn--primary {
+  background-color: var(--mm-color-primary);
+  color: #fff !important;
+}
+a:hover, .btn--primary:hover {
+  background-color: var(--mm-link-hover-color);
+  color: #fff !important;
+}
+
+.btn--success {
+  background-color: var(--mm-color-accent);
+  color: #1C1C1C !important;
+}
+.btn--success:hover {
+  filter: brightness(0.9);
+}
+
+/* Kopfzeile, Navigation */
+.masthead, .page__hero {
+  background-color: var(--mm-color-primary);
+  color: #fff;
+}
+
+/* Footer */
+.page__footer {
+  background-color: #E7E9EB;
+  color: #444;
+  border-top: 1px solid #D0D3D6;
+}
+
+/* Code-Blöcke */
+.highlight pre, code {
+  background-color: var(--mm-code-bg);
+  border-radius: 6px;
+}
+
+/* Galerie-Bilder leicht abgerundet */
+figure img {
+  border-radius: 8px;
+  box-shadow: 0 2px 8px rgba(0,0,0,0.1);
 }
